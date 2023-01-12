@@ -9,9 +9,6 @@ public class Datum  {
     private String url;
     private String downloadUrl;
 
-    public Datum() {
-
-    }
 
     public Datum(String id, String author, int width, int height, String url, String downloadUrl) {
         this.id = id;

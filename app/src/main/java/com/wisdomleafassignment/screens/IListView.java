@@ -6,6 +6,7 @@ import java.io.IOException;
 
 public interface IListView {
 
-    void setList(Object model) throws JSONException, IOException;
+    void setList
+            (Object model) throws JSONException, IOException;
 
 }

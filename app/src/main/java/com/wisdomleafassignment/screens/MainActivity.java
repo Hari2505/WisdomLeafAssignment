@@ -32,7 +32,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements IListView {
     RecyclerView recyclerView;
-    int page = 1, limit = 20;
+    int page = 0, limit = 20;
     int pastVisiblesItems, visibleItemCount, totalItemCount;
     LinearLayoutManager mLayoutManager;
     SwipeRefreshLayout swipeRefreshLayout;
@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements IListView {
         swipeRefreshLayout.setOnRefreshListener(() -> {
             if (isConnected()) {
                 iListPresenter.getList(0, limit);
-                Log.e("page and limit", String.valueOf("0"));
+                Log.e("page and limit", "0");
             } else {
                 loadingPB.setVisibility(View.INVISIBLE);
                 Toast.makeText(getApplicationContext(), "No Internet Connection", Toast.LENGTH_SHORT).show();
@@ -137,7 +137,6 @@ public class MainActivity extends AppCompatActivity implements IListView {
     public void setList(Object model) throws IOException, JSONException {
         List<Datum> list = new ArrayList<>();
 
-        list.clear();
         if (model != null) {
             ObjectMapper objectMapper = new ObjectMapper();
             String respData = objectMapper.writeValueAsString(model);
@@ -156,7 +155,6 @@ public class MainActivity extends AppCompatActivity implements IListView {
 
                 Datum datum = new Datum(id, author, width, height, url, downloadUrl);
                 list.add(datum);
-                //Log.i(TAG, "list: " + list.get(j).getDownloadUrl());
                 listAdapter.setData(list);
             }
             loadingPB.setVisibility(View.INVISIBLE);

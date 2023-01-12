@@ -9,7 +9,12 @@ import retrofit2.Response;
 
 public interface IResponseInterface {
 
-    void onResponseSuccess(Response response, String reqType) throws JSONException, IOException;
+    void onResponseSuccess(
+            Response response,
+            String reqType
+    ) throws JSONException, IOException;
 
-    void onResponseFailure(String responseError);
+    void onResponseFailure(
+            String responseError
+    );
 }
