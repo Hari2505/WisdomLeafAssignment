@@ -5,7 +5,6 @@ import android.content.Context;
 
 import androidx.multidex.MultiDexApplication;
 
-import com.facebook.stetho.Stetho;
 import com.wisdomleafassignment.apipresenter.ApiConstants;
 import com.wisdomleafassignment.apipresenter.RestApi;
 
@@ -34,7 +33,6 @@ public class AppController extends MultiDexApplication {
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build();
-        Stetho.initializeWithDefaults(this);
         service = retrofit.create(RestApi.class);
     }
 
