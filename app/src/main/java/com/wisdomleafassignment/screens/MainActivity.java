@@ -1,7 +1,9 @@
-package com.wisdomleafassignment;
+package com.wisdomleafassignment.screens;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.wisdomleafassignment.R;
 
 public class MainActivity extends AppCompatActivity {
 
