@@ -71,7 +71,8 @@ public class MainActivity extends AppCompatActivity implements IListView {
     private void setUpSwipeRefresh() {
         swipeRefreshLayout.setOnRefreshListener(() -> {
             if (isConnected()) {
-                iListPresenter.getList(0, limit);
+                page = 0;
+                iListPresenter.getList(page, limit);
                 Log.e("page and limit", "0");
             } else {
                 loadingPB.setVisibility(View.INVISIBLE);
@@ -157,6 +158,7 @@ public class MainActivity extends AppCompatActivity implements IListView {
                 list.add(datum);
                 listAdapter.setData(list);
             }
+            Log.e("Page Number : ", String.valueOf(page)+ "List"+list.size());
             loadingPB.setVisibility(View.INVISIBLE);
 
         }

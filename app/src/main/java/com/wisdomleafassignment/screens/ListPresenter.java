@@ -29,7 +29,6 @@ public class ListPresenter implements IListPresenter, IResponseInterface {
     public void onResponseSuccess(Response response, String reqType) throws JSONException, IOException {
         if (response != null) {
             if (reqType.equalsIgnoreCase(ApiReqType.List)) {
-
                 Object model = response.body();
                 iListView.setList(model);
             }

@@ -51,10 +51,6 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
             final Datum model = list.get(position);
             holder.title.setText(model.getAuthor());
             String url = model.getDownloadUrl();
-            Log.i(TAG, "DownloadUrl: " + model.getDownloadUrl());
-            Log.i(TAG, "url: " + model.getUrl());
-
-            //Picasso.get().load(url).into(holder.imageView);
             RequestOptions myOptions = new RequestOptions()
                     .override(100, 100);
 
